@@ -4,9 +4,13 @@ This is a drop-in replacement for the standard [Go](http://golang.org) package w
 
 ## Maturity
 
+[![Build Status](https://travis-ci.org/agext/errors.svg?branch=master)](https://travis-ci.org/agext/errors)
+
 Stable: no known bugs or performance issues.
 
 ## Overview
+
+[![GoDoc](https://godoc.org/github.com/agext/errors?status.png)](https://godoc.org/github.com/agext/errors)
 
 If you need to retain more information about an error message than a single string allows, just substitute this package for the one in the standard library.
 
