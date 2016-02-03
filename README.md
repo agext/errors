@@ -6,7 +6,7 @@ This is a drop-in replacement for the standard [Go](http://golang.org) package w
 
 [![Build Status](https://travis-ci.org/agext/errors.svg?branch=master)](https://travis-ci.org/agext/errors)
 
-Stable: no known bugs or performance issues.
+v1.0 Stable: Guaranteed no breaking changes to the API in future v1.x releases. No known bugs or performance issues. Probably safe to use in production, though provided on "AS IS" basis.
 
 ## Overview
 
