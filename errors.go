@@ -12,6 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*
+Package errors provides extended error handling.
+
+When you need to retain more information about an error message than a single string allows, just substitute this package for the one in the standard library.
+
+The `New` function still accepts a single string as argument, so no code will be broken. Where you need to include additional information, you can provide it to `New` in a `Desc` structure instead of the string, or you can add it to the error message using one of its setter methods.
+
+The additional information can be used for smarter error handling and logging:
+- `Level` differentiates between warnings, regular errors, panics converted to errors, and fatal errors;
+- `Code` allows custom classification and prioritizing, by using ranges or bit-level masks;
+- `Info` offers a store for arbitrary data and messages, besides the main error `Text`; the special string "debug.stack", if present as an element in the Info slice, is automatically replaced by a stack trace at the point the error message has been created.
+
+*/
 package errors
 
 import (

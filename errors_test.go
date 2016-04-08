@@ -1,3 +1,17 @@
+// Copyright 2015 ALRUX Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 package errors
 
 import (
@@ -29,12 +43,7 @@ func TestNew(t *testing.T) {
 		t.Errorf(`New("abc") == New("xyz")`)
 	}
 
-	// Same allocation should be equal to itself.
-	err := New("jkl")
-	if err != err {
-		t.Errorf(`err != err`)
-	}
-	err = New(17)
+	err := New(17)
 	if err.Code() != ERR_NEW_ARG {
 		t.Errorf(`New(17).Code() = %q, want %q`, err.Code(), ERR_NEW_ARG)
 	}
@@ -90,7 +99,7 @@ func TestLevelNames(t *testing.T) {
 func TestSetters(t *testing.T) {
 	err := New("abc")
 	if err.SetLevel(FATAL).Level() != FATAL {
-		t.Errorf(`SetLevel(17).Level() = %q, want %q`, err.Level(), levelName(FATAL))
+		t.Errorf(`SetLevel(FATAL).Level() = %q, want %q`, err.Level(), levelName(FATAL))
 	}
 	if err.SetCode(17).Code() != 17 {
 		t.Errorf(`SetCode(17).Code() = %q, want %q`, err.Code(), 17)

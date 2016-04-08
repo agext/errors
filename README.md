@@ -12,7 +12,7 @@ v1.0 Stable: Guaranteed no breaking changes to the API in future v1.x releases. 
 
 [![GoDoc](https://godoc.org/github.com/agext/errors?status.png)](https://godoc.org/github.com/agext/errors)
 
-If you need to retain more information about an error message than a single string allows, just substitute this package for the one in the standard library.
+When you need to retain more information about an error message than a single string allows, just substitute this package for the one in the standard library.
 
 The `New` function still accepts a single string as argument, so no code will be broken. Where you need to include additional information, you can provide it to `New` in a `Desc` structure instead of the string, or you can add it to the error message using one of its setter methods.
 
