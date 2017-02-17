@@ -24,14 +24,14 @@ type mockLogger struct {
 	log string
 }
 
-func (this *mockLogger) Print(s ...interface{}) {
-	this.log += fmt.Sprintln(s...)
+func (ml *mockLogger) Print(s ...interface{}) {
+	ml.log += fmt.Sprintln(s...)
 }
-func (this *mockLogger) Fatal(s ...interface{}) {
-	this.log += "[FATAL] " + fmt.Sprintln(s...)
+func (ml *mockLogger) Fatal(s ...interface{}) {
+	ml.log += "[FATAL] " + fmt.Sprintln(s...)
 }
-func (this *mockLogger) Panic(s ...interface{}) {
-	this.log += "[PANIC] " + fmt.Sprintln(s...)
+func (ml *mockLogger) Panic(s ...interface{}) {
+	ml.log += "[PANIC] " + fmt.Sprintln(s...)
 }
 
 func TestNew(t *testing.T) {

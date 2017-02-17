@@ -1,18 +1,20 @@
 # Extended `errors` package for Go (golang)
 
+[![Release](https://img.shields.io/github/release/agext/errors.svg?style=flat)](https://github.com/agext/errors/releases/latest)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat)](https://godoc.org/github.com/agext/errors) 
+[![Build Status](https://travis-ci.org/agext/errors.svg?branch=master&style=flat)](https://travis-ci.org/agext/errors)
+[![Coverage Status](https://coveralls.io/repos/github/agext/errors/badge.svg?style=flat)](https://coveralls.io/github/agext/errors)
+[![Go Report Card](https://goreportcard.com/badge/github.com/agext/errors?style=flat)](https://goreportcard.com/report/github.com/agext/errors)
+
 This is a drop-in replacement for the standard [Go](http://golang.org) package with the same name, providing all the standard functionality as well as additional features.
 
-## Maturity
+## Project Status
 
-[![Build Status](https://travis-ci.org/agext/errors.svg?branch=master)](https://travis-ci.org/agext/errors)
-
-v1.0 Stable: Guaranteed no breaking changes to the API in future v1.x releases. No known bugs or performance issues. Probably safe to use in production, though provided on "AS IS" basis.
+v1.0.1 Stable: Guaranteed no breaking changes to the API in future v1.x releases. Probably safe to use in production, though provided on "AS IS" basis.
 
 This package is being actively maintained. If you encounter any problems or have any suggestions for improvement, please [open an issue](https://github.com/agext/errors/issues). Pull requests are welcome.
 
 ## Overview
-
-[![GoDoc](https://godoc.org/github.com/agext/errors?status.png)](https://godoc.org/github.com/agext/errors)
 
 When you need to retain more information about an error message than a single string allows, just substitute this package for the one in the standard library.
 

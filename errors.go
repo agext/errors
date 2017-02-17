@@ -101,60 +101,60 @@ func newFromE(desc *Desc) Error {
 // Log sends the error to the provided log, using the appropriate
 // logging function: FATAL conditions are logged using Fatal(), PANIC using
 // Panic(), and anything else using Print().
-func (this *errorMessage) Log(log Logger) Error {
-	switch this.level {
+func (em *errorMessage) Log(log Logger) Error {
+	switch em.level {
 	case FATAL:
-		log.Fatal(this)
+		log.Fatal(em)
 	case PANIC:
-		log.Panic(this)
+		log.Panic(em)
 	default:
-		log.Print(this)
+		log.Print(em)
 	}
-	return this
+	return em
 }
 
 // Level returns the error level.
-func (this *errorMessage) Level() int8 {
-	return this.level
+func (em *errorMessage) Level() int8 {
+	return em.level
 }
 
 // SetLevel sets the error level.
-func (this *errorMessage) SetLevel(l int8) Error {
+func (em *errorMessage) SetLevel(l int8) Error {
 	if l >= minLevel && l <= maxLevel {
-		this.level = l
+		em.level = l
 	}
-	return this
+	return em
 }
 
 // Code returns the error code.
-func (this *errorMessage) Code() int {
-	return this.code
+func (em *errorMessage) Code() int {
+	return em.code
 }
 
 // SetCode sets the error code.
-func (this *errorMessage) SetCode(c int) Error {
-	this.code = c
-	return this
+func (em *errorMessage) SetCode(c int) Error {
+	em.code = c
+	return em
 }
 
 // Text returns the error text.
-func (this *errorMessage) Text() string {
-	return this.text
+func (em *errorMessage) Text() string {
+	return em.text
 }
 
 // SetText sets the error text.
-func (this *errorMessage) SetText(t string) Error {
-	this.text = t
-	return this
+func (em *errorMessage) SetText(t string) Error {
+	em.text = t
+	return em
 }
 
 // Info returns the error info.
-func (this *errorMessage) Info() []string {
-	return this.info
+func (em *errorMessage) Info() []string {
+	return em.info
 }
 
 // addInfo adds (more) error info.
-func (this *errorMessage) addInfo(calldepth int, s ...string) Error {
+func (em *errorMessage) addInfo(calldepth int, s ...string) Error {
 	for i, line := range s {
 		if line == "debug.stack" {
 			calldepth *= 2
@@ -180,20 +180,20 @@ func (this *errorMessage) addInfo(calldepth int, s ...string) Error {
 			break
 		}
 	}
-	this.info = append(this.info, s...)
-	return this
+	em.info = append(em.info, s...)
+	return em
 }
 
 // AddInfo adds (more) error info.
-func (this *errorMessage) AddInfo(s ...string) Error {
-	return this.addInfo(2, s...)
+func (em *errorMessage) AddInfo(s ...string) Error {
+	return em.addInfo(2, s...)
 }
 
 // Error returns a text containing the error message and code;
 // it is useful for satisfying the `error` interface.
-func (this *errorMessage) Error() string {
-	if this.code != 0 {
-		return this.text + fmt.Sprintf(" (code: 0x%04x)", this.code)
+func (em *errorMessage) Error() string {
+	if em.code != 0 {
+		return em.text + fmt.Sprintf(" (code: 0x%04x)", em.code)
 	}
-	return this.text
+	return em.text
 }
